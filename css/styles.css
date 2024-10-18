@@ -89,6 +89,21 @@ img {
   padding-top: 24px;
   padding-bottom: 24px;
   display: block;
+  position: relative;
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.active::after {
+  content: "";
+  display: block;
+  width: 100%;
+  height: 4px;
+  background: #404bbf;
+  border-radius: 2px;
+  position: absolute;
+  left: 0;
+  bottom: -1px;
 }
 
 .nav-list-item .nav-link:hover,
@@ -114,6 +129,8 @@ img {
   padding-top: 24px;
   padding-bottom: 24px;
   display: block;
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .contact-info-item .contact-info-link:hover,
@@ -125,8 +142,18 @@ img {
 
 .hero {
   background: #2e2f42;
+  background-image: linear-gradient(
+      rgba(46, 47, 66, 0.7),
+      rgba(46, 47, 66, 0.7)
+    ),
+    url(../images/herobackgroundimage.jpg);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
   padding-top: 188px;
   padding-bottom: 188px;
+  max-width: 1440px;
+  margin: 0 auto;
 }
 
 .hero-title {
@@ -160,6 +187,8 @@ img {
   height: 56px;
   margin-left: auto;
   margin-right: auto;
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .hero-button:hover,
@@ -190,6 +219,18 @@ img {
 
 .advantages-item {
   width: calc((100% - 72px) / 4);
+}
+
+.advantages-icon {
+  border: 1px solid #8e8f99;
+  border-radius: 4px;
+  width: 264px;
+  height: 112px;
+  background: #f4f4fd;
+  margin-bottom: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .advantages-subtitle {
@@ -266,6 +307,34 @@ img {
   line-height: 1.5;
   letter-spacing: 0.02em;
   text-align: center;
+  margin-bottom: 8px;
+}
+
+.team-soc-list {
+  display: flex;
+  align-items: center;
+  margin-left: auto;
+  gap: 24px;
+}
+
+.team-soc-link {
+  display: flex;
+  width: 40px;
+  height: 40px;
+  background-color: #4d5ae5;
+  border-radius: 50%;
+  align-items: center;
+  justify-content: center;
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.team-soc-link:hover {
+  background-color: #404bbf;
+}
+
+.team-soc-icon {
+  fill: #f4f4fd;
 }
 
 /* ---------------------------------------------OUR PORTFOLIO--------------------------------------------- */
@@ -289,8 +358,42 @@ img {
   gap: 48px 24px;
 }
 
+.portfolio-cover-container {
+  position: relative;
+  overflow: hidden;
+}
+
 .portfolio-item {
   width: calc((100% - 48px) / 3);
+}
+
+.portfolio-cover-text {
+  font-size: 16px;
+  line-height: 1.5;
+  letter-spacing: 0.02em;
+  color: #f4f4fd;
+  background-color: #4d5ae5;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  padding-left: 32px;
+  padding-right: 32px;
+  padding-top: 32px;
+  transform: translateY(100%);
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.portfolio-item:hover {
+  position: relative;
+  box-shadow: 0 2px 1px 0 rgba(46, 47, 66, 0.08),
+    0 1px 1px 0 rgba(46, 47, 66, 0.16), 0 1px 6px 0 rgba(46, 47, 66, 0.08);
+}
+
+.portfolio-item:hover .portfolio-cover-text {
+  transform: translateY(0);
 }
 
 .portfolio-item-descr {
@@ -323,6 +426,14 @@ img {
   padding-bottom: 100px;
 }
 
+.footer-container {
+  display: flex;
+}
+
+.footer-logo-container {
+  margin-right: 120px;
+}
+
 .footer-logo {
   font-family: "Raleway", sans-serif;
   font-weight: 700;
@@ -345,4 +456,38 @@ img {
   letter-spacing: 0.02em;
   color: #f4f4fd;
   max-width: 264px;
+}
+
+.footer-soc-media {
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 1.5;
+  letter-spacing: 0.02em;
+  color: #fff;
+  margin-bottom: 16px;
+}
+
+.footer-soc-list {
+  display: flex;
+  gap: 16px;
+}
+
+.footer-soc-link {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 40px;
+  height: 40px;
+  background-color: #4d5ae5;
+  border-radius: 50%;
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.footer-soc-link:hover {
+  background-color: #31d0aa;
+}
+
+.footer-soc-icon {
+  fill: #f4f4fd;
 }
